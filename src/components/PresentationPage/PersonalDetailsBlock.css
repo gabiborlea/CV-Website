@@ -1,0 +1,9 @@
+.personal-details-block{
+    padding: 10px;
+    display: flex;
+}
+
+.personal-photo{
+    height: 300px;
+    border-radius: 50%;
+}
