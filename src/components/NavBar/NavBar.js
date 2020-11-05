@@ -6,7 +6,7 @@ function NavBar() {
         return (
             <nav className="NavBarItems">
                 <h1 className="navbar-logo">Gabriel Borlea</h1>
-
+                    {/*
                 <ul className="nav-menu">
                     { MenuItems.map((item, index) => {
                         return (
@@ -16,6 +16,7 @@ function NavBar() {
                         )
                     })}
                 </ul>
+                    */}
             </nav>
         )
 }

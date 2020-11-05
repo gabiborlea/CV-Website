@@ -9,8 +9,7 @@
 
 .navbar-logo {
     color: #fff;
-    justify-self: start;
-    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .nav-menu {
