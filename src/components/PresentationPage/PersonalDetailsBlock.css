@@ -54,6 +54,12 @@
     animation-timing-function: ease-in-out;
 }
 
+.center-node{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
 
 .default-edge{
     animation-name: example;
