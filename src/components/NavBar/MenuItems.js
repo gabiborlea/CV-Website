@@ -1,12 +1,23 @@
 export const MenuItems = [
     {
         title: 'Home',
-        url: '#',
-        classN: 'nav-links'
+        id: '1',
+        classN: 'nav-button'
     },
     {
-        title: 'Contact',
-        url: '#',
-        classN: 'nav-links'
+        title: 'Education',
+        id: '3',
+        classN: 'nav-button'
+    },
+    {
+        title: 'Skills',
+        id: '4',
+        classN: 'nav-button'
+    },
+    {
+        title: 'Work Experience',
+        id: '2',
+        classN: 'nav-button'
     }
+
 ]

@@ -10,7 +10,8 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
-    "react-flow-renderer": "^7.1.0",
+    "react-flow-renderer": "^8.0.0",
+    "react-icons": "^3.11.0",
     "react-scripts": "4.0.0",
     "react-transition-group": "^1.2.1",
     "web-vitals": "^0.2.4"
@@ -38,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
