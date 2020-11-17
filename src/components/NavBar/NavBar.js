@@ -16,11 +16,18 @@ function NavBar(props) {
             }
         }
 
-        const ToNode = (id) => {
+        const ToNode = (id, props) => {
             const node = GetNodeById(id);
+            let zoom = 1;
+            let plus= 0;
+            if (window.mobileCheck()) {
+                props.onClose()
+                zoom = 1;
+                plus = node.__rf.width/2;
+            }
             const x = - node.__rf.position.x + window.innerWidth/2 - node.__rf.width;
             const y = -node.__rf.position.y + window.innerHeight/2 - node.__rf.height;
-            transform({x:x, y:y , zoom:1})
+            transform({x:x+plus, y:y , zoom:zoom})
         }
         return (
             <>
@@ -41,7 +48,7 @@ function NavBar(props) {
                                 <button
                                     key={index}
                                     className={item.classN}
-                                    onClick={()=>ToNode(item.id)}>
+                                    onClick={()=>ToNode(item.id, props)}>
                                     <span>{item.title}</span>
                                 </button>
                             )

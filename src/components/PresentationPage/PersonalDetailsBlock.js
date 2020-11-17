@@ -56,13 +56,6 @@ const InputT = ({data}) => {
     );
 };
 
-const animatedEdges = () => {
-    return (
-        <div className="default-edge">
-
-        </div>
-    )
-}
 
 const nodeTypes = {
     sourceLRTB: SourceLRTB,
@@ -74,9 +67,9 @@ const nodeTypes = {
 
 
 const onLoad = (reactFlowInstance) => {
-    let props;
-    window.mobileCheck() ? props={x:75, y:100, zoom:0.6} : props={x:-100, y:0, zoom:1}
-    reactFlowInstance.setTransform(props);
+    reactFlowInstance.fitView();
+    if (!window.mobileCheck()) reactFlowInstance.zoomTo(1);
+
 }
 
 
