@@ -26,13 +26,14 @@ function NavBar(props) {
                 plus = node.__rf.width/2;
             }
             const x = - node.__rf.position.x + window.innerWidth/2 - node.__rf.width;
-            const y = -node.__rf.position.y + window.innerHeight/2 - node.__rf.height;
+            const y = -node.__rf.position.y + window.innerHeight/2 - node.__rf.height+5;
             transform({x:x+plus, y:y , zoom:zoom})
         }
         return (
             <>
                 <div className='navbar'>
-                    <div onClick={props.onOpen} className="open-button">
+                    <div onClick={props.onOpen} className='open-button'>
+
                         <FaBars />
                     </div>
                     <h1>Gabriel Borlea</h1>
