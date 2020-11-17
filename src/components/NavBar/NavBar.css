@@ -1,8 +1,8 @@
 .navbar{
-    background-color: #000;
+    background-color: #111;
     height:40px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     color: #fff;
     padding-left: 10px;
@@ -51,5 +51,12 @@
     right: 10px;
     font-size: 20px;
     margin-left: 50px;
+}
+
+.open-button {
+    position: absolute;
+    top: 10px;
+    left : 10px;
+    font-size: 20px;
 }
 

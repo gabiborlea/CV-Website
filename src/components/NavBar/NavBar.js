@@ -32,9 +32,10 @@ function NavBar(props) {
         return (
             <>
                 <div className='navbar'>
-                    <div onClick={props.onOpen}>
+                    <div onClick={props.onOpen} className="open-button">
                         <FaBars />
                     </div>
+                    <h1>Gabriel Borlea</h1>
                 </div>
                 <nav className={props.sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items'>
