@@ -64,6 +64,8 @@ class App extends React.Component{
                         onOpen={() => this.handleOpenMenu()}
                         onClose={() => this.handleCloseMenu()}
                         sidebar ={this.state.menuOpened}
+                        menuHeight={this.state.height}
+                        barWidth={this.state.width}
                         />
                     <PersonalDetailsBlock marginLeft={this.state.mapMarginLeft} width={this.state.mapWidth}/>
                 </ReactFlowProvider>

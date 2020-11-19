@@ -31,14 +31,18 @@ function NavBar(props) {
         }
         return (
             <>
-                <div className='navbar'>
+                <div className='navbar' style={{
+                    width: props.barWidth,
+                }}>
                     <div onClick={props.onOpen} className='open-button'>
 
                         <FaBars />
                     </div>
                     <h1>Gabriel Borlea</h1>
                 </div>
-                <nav className={props.sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <nav className={props.sidebar ? 'nav-menu active' : 'nav-menu'} style={{
+                    height: props.menuHeight
+                }}>
                     <ul className='nav-menu-items'>
                         <li className='navbar-toggle'>
                             <span className="close-button" onClick={props.onClose}>
