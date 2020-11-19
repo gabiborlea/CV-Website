@@ -17,24 +17,35 @@ class App extends React.Component{
 
         }
         this.updateDimensions = this.updateDimensions.bind(this);
-    }
-
-    componentDidMount() {
-        console.log(this.state.height);
-        window.addEventListener("resize", this.updateDimensions);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.updateDimensions);
+        this.updateOrientation = this.updateOrientation.bind(this);
     }
 
     updateDimensions() {
         this.setState({
             height: window.innerHeight,
             width: window.innerWidth,
-            mapWidth: window.mobileCheck()? window.innerWidth: window.innerWidth-200
         });
-        console.log(this.state.height, this.state.width)
+        console.log(this.state.height, this.state.width);
+        console.log(window.innerHeight, window.innerWidth);
+    }
+    updateOrientation () {
+        const width = this.state.width;
+        const height = this.state.height;
+        this.setState({
+            width:height,
+            height:width
+        })
+        console.log("orie")
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.updateDimensions);
+        window.addEventListener("orientationchange", this.updateOrientation);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions);
+        window.removeEventListener("orientationchange", this.updateOrientation);
     }
 
     handleOpenMenu() {

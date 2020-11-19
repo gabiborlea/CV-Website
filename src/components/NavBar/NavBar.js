@@ -32,8 +32,9 @@ function NavBar(props) {
         return (
             <>
                 <div className='navbar' style={{
-                    width: props.barWidth,
-                }}>
+                    width: props.barWidth
+                }
+                }>
                     <div onClick={props.onOpen} className='open-button'>
 
                         <FaBars />
