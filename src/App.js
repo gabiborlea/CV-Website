@@ -12,8 +12,29 @@ class App extends React.Component{
             menuOpened: !window.mobileCheck(),
             mapMarginLeft: window.mobileCheck()? "0px": "200px",
             mapWidth: window.mobileCheck()? window.innerWidth: window.innerWidth-200,
+            height: window.innerHeight,
+            width: window.innerWidth
 
         }
+        this.updateDimensions = this.updateDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        console.log(this.state.height);
+        window.addEventListener("resize", this.updateDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions);
+    }
+
+    updateDimensions() {
+        this.setState({
+            height: window.innerHeight,
+            width: window.innerWidth,
+            mapWidth: window.mobileCheck()? window.innerWidth: window.innerWidth-200
+        });
+        console.log(this.state.height, this.state.width)
     }
 
     handleOpenMenu() {
