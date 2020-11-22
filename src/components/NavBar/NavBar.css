@@ -6,16 +6,19 @@
     align-items: center;
     color: #fff;
     padding-left: 10px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .nav-menu{
     width: 0;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     padding-top: 22px;
 }
 

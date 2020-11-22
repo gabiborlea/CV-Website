@@ -4,6 +4,7 @@ import {FaBars} from 'react-icons/fa';
 import {AiOutlineClose} from 'react-icons/ai';
 import './NavBar.css'
 import {useStoreState, useZoomPanHelper} from "react-flow-renderer";
+import {isMobile} from "react-device-detect";
 
 function NavBar(props) {
         const {transform} = useZoomPanHelper();
@@ -20,7 +21,7 @@ function NavBar(props) {
             const node = GetNodeById(id);
             let zoom = 1;
             let plus= 0;
-            if (window.mobileCheck()) {
+            if (isMobile) {
                 props.onClose()
                 zoom = 1;
                 plus = node.__rf.width/2;
@@ -31,19 +32,14 @@ function NavBar(props) {
         }
         return (
             <>
-                <div className='navbar' style={{
-                    width: props.barWidth
-                }
-                }>
+                <div className='navbar' >
                     <div onClick={props.onOpen} className='open-button'>
 
                         <FaBars />
                     </div>
                     <h1>Gabriel Borlea</h1>
                 </div>
-                <nav className={props.sidebar ? 'nav-menu active' : 'nav-menu'} style={{
-                    height: props.menuHeight
-                }}>
+                <nav className={props.sidebar ? 'nav-menu active' : 'nav-menu'} >
                     <ul className='nav-menu-items'>
                         <li className='navbar-toggle'>
                             <span className="close-button" onClick={props.onClose}>

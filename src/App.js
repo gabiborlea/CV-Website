@@ -3,17 +3,18 @@ import React from "react";
 import NavBar from './components/NavBar/NavBar'
 import PersonalDetailsBlock from './components/PresentationPage/PersonalDetailsBlock'
 import {ReactFlowProvider} from "react-flow-renderer";
+import {isMobile} from "react-device-detect";
 
-class App extends React.Component{
+class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            menuOpened: !window.mobileCheck(),
-            mapMarginLeft: window.mobileCheck()? "0px": "200px",
-            mapWidth: window.mobileCheck()? window.innerWidth: window.innerWidth-200,
+            menuOpened: !isMobile,
+            mapMarginLeft: isMobile ? "0px" : "200px",
+            mapWidth: isMobile ? window.innerWidth : window.innerWidth - 200,
             height: window.innerHeight,
-            width: window.innerWidth
+            width: window.innerWidth,
 
         }
         this.updateDimensions = this.updateDimensions.bind(this);
@@ -25,16 +26,20 @@ class App extends React.Component{
             height: window.innerHeight,
             width: window.innerWidth,
         });
-        console.log(this.state.height, this.state.width);
-        console.log(window.innerHeight, window.innerWidth);
+
+        this.setState({
+            mapWidth: this.state.menuOpened ? this.state.width - 200 : this.state.width
+        })
     }
-    updateOrientation () {
+
+    updateOrientation() {
         const width = this.state.width;
         const height = this.state.height;
         this.setState({
-            width:height,
-            height:width
+            width: height,
+            height: width
         })
+
         console.log("orie")
     }
 
@@ -66,7 +71,6 @@ class App extends React.Component{
     }
 
 
-
     render() {
         return (
             <div className="App">
@@ -74,11 +78,12 @@ class App extends React.Component{
                     <NavBar
                         onOpen={() => this.handleOpenMenu()}
                         onClose={() => this.handleCloseMenu()}
-                        sidebar ={this.state.menuOpened}
-                        menuHeight={this.state.height}
-                        barWidth={this.state.width}
-                        />
-                    <PersonalDetailsBlock marginLeft={this.state.mapMarginLeft} width={this.state.mapWidth}/>
+                        sidebar={this.state.menuOpened}
+                    />
+                    <PersonalDetailsBlock
+                        marginLeft={this.state.mapMarginLeft}
+                        width={this.state.mapWidth}
+                    />
                 </ReactFlowProvider>
 
             </div>
